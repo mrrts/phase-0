@@ -1,0 +1,125 @@
+body {
+  background-color: #ffffff;
+  color: #000080;  
+}
+
+a {
+  color: #800080;
+  font-weight: 400;
+}
+
+a:visited {
+  color: #FF0000;
+}
+
+header {
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  border-bottom: 1px solid gray;
+  padding-bottom: 15px;
+}
+
+header p {
+  margin: 0;
+}
+
+header img {
+  width: 200px;
+  max-width: 90%;
+  display: block;
+  margin: 10px auto;
+  padding: 3px;
+  border: 1px solid gray;
+}
+
+.company {
+  font-size: 1.3em; 
+  text-transform: uppercase;
+}
+
+.first-letter {
+  font-size: 1.5em;
+}
+
+.inc {
+  font-size: .75em;
+}
+
+.address1, .address2 {
+  font-size: .8em;
+}
+
+.links .column {
+  width: 45%;
+  margin: 0px 10px;
+  padding: 0px 5px;
+  float: left;
+}
+
+li {
+  height: 60px;
+  margin-top: 5px;
+}
+
+p {
+  clear: both;
+}
+
+.column span {
+  display: block;
+  font-size: .7em;
+}
+
+footer img {
+  display: block;
+  margin: 0 auto;
+}
+
+footer p {
+  font-size: .7em;
+}
+
+.geico {
+  text-align: center;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  padding: 15px 0;
+}
+
+.contact {
+  border-bottom: 1px solid gray;
+  padding-bottom: 15px;
+}
+
+.legal {
+  font-size: 1em;
+}
+
+
+/******** REFLECTION ****************
+
+
+
+--What is important to know when linking an external file (like a stylesheet) to an HTML file?
+
+The external file is linked using a "link" tag in the head element, and the file path is defined in the "src" attribute of the "link" tag. You need to include the "rel" attribute as well in order to define the type of resource that you are including (e.g. "stylesheet"). 
+
+--What tricks did you use to help you with positioning? How hard was it to get the site as you wanted it?
+
+My pair and I divided our link list into two sections (div's) and styled both of those with the "float:left" property. We had to discuss the best practices for how to make sure we were being semantically accurate. We also set each link's list item (li) to have a definite height. This mimicked the item alignment achieved via tables on the official Berkshire site. We also nudged some elements around using margins and padding, trying to make sure we were researching those properties and how to use them appropriately. We faced some challenges in creating the proper widths for the link columns, and ultimately we chose to set smaller widths to compensate for the margins and padding. 
+
+--What CSS did you use to modify the element style (like size, color, etc.)
+
+We used font-size, font-weight, text-align, color, and text-transform to style the textual pieces of the page. We also took advantage of inheritance functionality in CSS to set an absolute base font size in the parent body element "16px", and then in the body element's children, we used overrides with relative font sizes (e.g. 1.5em). On some block-level elements, we added borders, margin, and padding to achieve the spacing and separations that we needed. 
+
+--Did you modify the HTML to include classes or ids? If so, which did you choose and why? If you didn't, how would you know which one to add to your HTML?
+
+We did not choose to use any ids, but we used classes to target elements of our header and footer by name (e.g. .company-name or .geico), and we also used a div class .column to separate our links list into two chunks, both with a float:left property.
+
+--When you compared your site to the actual code base, which do you think had cleaner code that followed best practices and why?
+
+When we inspected the code for the official Berkshire page, we noticed that it had no linked external stylesheet; the site was probably created before the days of CSS. Instead there were many deprecated HTML elements used, like the font element, the non-semantic b element, and the center element. Additionally, all of the styling was done inline, and the positioning for the links list was made using a complicated tree of table/tr/td elements, which is not considered semantically appropriate as tables should only be used for tabular data, not positioning. Our CSS-based approach allowed us to create a much cleaner, more semantic HTML document, and we were able to avoid repeating ourselves by establishing style rules that applied to all elements of the same class, for example. CSS is clearly the more modern, more organized solution for styling web pages.
+
+*/
+
