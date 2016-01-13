@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Dissect This.</title>
+</head>
+
+<body>
+    <article>
+        <h2>Combined Git Reflections</h2>
+        <p>
+            Even though this was my first run-in with a formal version control system, I'd frequently needed one before without knowing it. Messing around with linux config files, in particular, can be a pretty fraught experience. My previous tactic was to just create a copy of the known working file with an extension of .backup before doing anything I was unsure of. Of course then you end up with multiple backups from different dates, each of which probably fixes one problem alone but you don't really know how to combine them into one that works for everything you need. This is exactly the sort of problem Git solves. Keeping track of every historical change to a file makes it trivial to try something and revert, and fairly simple to merge two variants into one final one.
+        </p>
+        <p>
+            Version control will be your best defense against these legitimate worries. Using version control tools like Subversion and Git, you can keep a traceable record of every change and version that your project goes through, and you can revert to any of those versions whenever you want. You can also branch off in a new direction, making changes to a copy (in Git, a "branch") of the project, without affecting the original. If the changes work out well, great! You can incorporate (or "merge") them into the official version. If not, you can just delete your branch and let it go, while the official ("master") branch remains untouched.
+        </p>
+    </article>
+</body>
+
+</html>
+
+
+<!-- -----REFLECTION------
+
+-- What HTML5 tags have you used in this challenge and continue to return to often? Why?
+
+Of course, we used the DOCTYPE, html, head, title, and body tags, which are required in every html document. We also used a header (h2) and paragraph (p) tags, which are basic structural units for organizing html content, and after some discussions as to its appropriate use, we incorporated the HTML5 article element to denote a whole unit of packageable content. For this challenge we particularly focused on the meta element, which is located in the head section and can define a number of different characteristics of the document and its content; in our case, we used the meta tag and its charset attribute to define the character set of the document as UTF-8. We will continue to use these often because they are fundamental to html documents, and this is the reason we focused on workflow in this challenge; using time-saving tools like Sublime snippets helps us to gain efficiency by avoiding frequent repetition of commonly used document elements. 
+
+-- How do elements get laid out on a page? What is the order the browser uses to display elements?
+
+Elements on a page will be laid out based on style rules, and each browser has its own default CSS, but this can be overridden and expanded by adding a custom stylesheet. The browser is very straightforward in its default rendering: it displays elements from the top to the bottom, regardless of nesting or CSS positioning. The un-displayed head element is loaded before any body rendering begins. 
+
+-- What did you learn about Sublime in this challenge? Do you think you'll create more handy snippets at a later date? What about research some shortcuts that already exist?
+
+I learned a lot about Sublime snippets and could instantly see what a valuable tool they will become. A lot of programming is aimed at the fundamental goal of having machines perform mundane, repetitive tasks so that humans can focus on higher-level processes, and snippets will help a web developer jump over the tedium of typing out every single tag and straight into the development of new content. Avoiding such tedium allows the developer's creative problem-solving processes to continue uninterrupted; in that sense, it saves more than just time. Based on prior web development experience, I know that I will create a Sublime snippet very soon for an html document with all of the Bootstrap resources linked in and the basic Bootstrap skeleton structure already written. I predict that I will find myself making class and function definitions of a certain type often in Ruby (et al.), so I may write snippets for those. The possibilities for snippets are endless, so I can see myself creating them all the time. Of course, with such a large developer community using Sublime, I'm sure that there are plenty of solutions already constructed. Perhaps they are shared on GitHub or available on Package Control. It will be interesting to see what's available. I love any tools that help someone be more productive, so this new information about Sublime snippets was very exciting to learn. 
+
+-->
+
+
+
+
+
