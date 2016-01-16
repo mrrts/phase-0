@@ -20,4 +20,4 @@ I have had experience with a lot of CSS in the past, and I've always enjoyed usi
 
 ### The challenge screenshots:
 
-![Challenge 1](imgs/0.png)![Challenge 2](imgs/1.png)![Challenge 3](imgs/2.png)![Challenge 4](imgs/3.png)![Challenge 5](imgs/4.png)![Challenge 6](imgs/5.png)![Challenge 7](imgs/6.png)![Challenge 8](imgs/7.png)
+![Challenge 1](imgs/0.png)![Challenge 2](imgs/1.png)![Challenge 3](imgs/2.png)![Challenge 4](imgs/3.png)![Challenge 5](imgs/4.png)![Challenge 6](imgs/5.png)![Challenge 7](imgs/6.png)![Challenge 8](imgs/7.png)![Challenge 9](imgs/8.png)
