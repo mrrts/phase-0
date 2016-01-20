@@ -1,0 +1,36 @@
+body {
+  font-family: Georgia, serif;
+}
+header{
+  background-color: blue;
+  padding: 10px;
+ 
+}
+
+.column-1 {
+  background-color: red;
+  float: left;
+  width: 50%;
+  padding: 10px;
+  box-sizing: border-box;
+  
+}
+
+.column-2 {
+  background-color: green;
+  float: right;
+  width: 50%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+footer {
+  background-color: yellow;
+  clear: both;
+  padding: 10px;
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
+}
