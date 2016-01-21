@@ -11,7 +11,19 @@
 # If +list_of_nums+ is empty the method should return nil
 
 # Your Solution Below
+# INITITAL SOLUTION:
+# 
+# def smallest_integer(list_of_nums)
+#   # Your code goes here!
+#   list_of_nums.sort.first
+# end
+
+# SOLUTION WITHOUT BUILT-IN METHODS:
+
 def smallest_integer(list_of_nums)
-  # Your code goes here!
-  list_of_nums.sort.first
+	smallest = list_of_nums[0]
+	list_of_nums.each do |num|
+		smallest = num if num < smallest
+	end
+	smallest
 end
