@@ -86,3 +86,22 @@ end
  # p mode(my_arr)
 
 # 4. Reflection
+
+
+# --- Which data structure did you and your pair decide to implement and why?
+
+# We used a hash to store key-value pairs of the array items and their respective frequencies. A hash was the most appropriate data structure in this case because we were dealing with pairs of information that needed to be associated with each other. When keeping a list of the resulting "winners", or "modes", however, we stored those hash keys with the greatest value (greatest frequencies) into an array, which was the return format specified in the instructions.
+
+# --- Were you more successful breaking this problem down into implementable pseudocode than the last with a pair? 
+
+# This one required more steps, so it took a little more thought during the pseudocode stage. At first we thought we knew the pathway toward a solution, but found that it would require a few different collection objects (two arrays and a hash) and therefore a few different iteration loops over those separate objects. 
+
+
+# --- What issues/successes did you run into when translating your pseudocode to code?
+
+# It was a little confusing to keep track of the information being returned in the separate expressions. This experience made a great case for why one should always use good, descriptive variable names.
+
+# --- What methods did you use to iterate through the content? Did you find any good ones when you were refactoring? Were they difficult to implement?
+
+# We only used the .each method initially, then branching into if/else statements. When we refactored, we looked at several Enumerable methods, and were able to figure out how to use .count and .max_by, which were a little tricky and required some IRB experimentation to find out what they returned. For instance, max_by returned an array with the pair's key as the first item and its value as the second item; it did not return the pair formatted as a {key=>value} hash as we had expected. We also looked at .collect, .select, and .sort_by, but we wound up not using them. 
+
