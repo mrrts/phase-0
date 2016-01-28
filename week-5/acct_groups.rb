@@ -59,3 +59,29 @@ def make_and_print_groups(name_master_list, group_size, min_group_size, shuffle_
 end
 
 make_and_print_groups(names_master, 4, 3, true)
+
+
+## REFLECTION
+
+# --- What was the most interesting and most difficult part of this challenge?
+
+# It was really cool to figure out how the logic would work to make sure we were creating a new group at the right time. I also enjoyed abstracting certain values into arguments so that you can use different rules to make your groups when you call the method. The most difficult part was trying to wrap my head around where we were in the data structures because I had an array of names and a final result hash, the pairs of which had values that were themselves arrays.
+
+# --- Do you feel you are improving in your ability to write pseudocode and break the problem down?
+
+# Yes, I find that I can write pseudocode more quickly now because I am realizing that it doesn't have to look a certain way or necessarily follow a certain syntax. It is there completely for me to get my plan in order and to be able to write the actual code quickly using the pseudo as my guideline.
+
+
+# --- Was your approach for automating this task a good solution? What could have made it even better?
+
+# My initial approach worked, but I think the solution became better when I decided to add flexibility by adding more arguments, and also added a second method to print out the groups more legibly. 
+
+# --- What data structure did you decide to store the accountability groups in and why?
+
+# I used a hash because then I'd be able to name the groups "Group 1", "Group 5", etc as a key and let the group itself be an array of names as the value of the key-value pair.
+
+# --- What did you learn in the process of refactoring your initial solution? Did you learn any new Ruby methods?
+
+# When refactoring I added the shuffle_first option, so I needed to research the shuffle method to find out if it had a destructive shuffle! version. It does indeed. Originally, I was trying to use the .max_by method to find the highest group number in my hash (i.e. last group) since hashes aren't always necessarily in order. But the return of the max_by method was a slightly unwieldy array, and so in this case, the built-in method actually resulted in messier code. I wound up altering my preceding logic so that I didn't need the max_by method and could simply use the current value of the group_num variable to find my last group.
+
+
