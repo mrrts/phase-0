@@ -14,17 +14,48 @@ names_master = ["Alivia Blount","Alyssa Page","Alyssa Ransbury","Andria Reta","A
 # Perhaps make a results hash that has "Group 1" as the key, and the group array as the value
 
 
-def make_groups(name_master_list, group_size, min_group_size)
+def make_groups(name_master_list, group_size, min_group_size, shuffle_first = false)
 	groups = {}
+	# Set initial group number
 	group_num = 1
+	name_master_list.shuffle! if shuffle_first
+	
 	name_master_list.each_with_index do |name, index|
-		groups["Group #{group_num}"] ||= []
+		# Set the value as an empty array if it doesn't already exist
+		groups["Group #{group_num}"] ||= [] 
 		groups["Group #{group_num}"] << name
-		if (index + 1) % group_size == 0 || name_master_list[index + 1] == nil
+		# Test whether we have either reached the group size already
+		# Or if we have reached the final name (The item at the next index is nil)
+		if (index + 1) % group_size == 0 && name_master_list[index + 1] != nil
+			# Time to make a new group with a new group number
 			group_num += 1
 		end
 	end
-	groups
+
+	# The last group will be the one with the current group_num value
+	last_group = groups["Group #{group_num}"]
+	# Test if the last group is too small; if so, add its members to the other groups
+	if last_group.length < min_group_size
+		# Make the second-to-last group the new group for the first member
+		new_group_num = group_num - 1
+		last_group.each do |name|
+			# Put the member into its new group
+			groups["Group #{new_group_num}"] << name
+			# Set a different new group for the next member
+			new_group_num -= 1
+		end
+		# Get rid of the group that was too small, now that its members have new groups
+		groups.delete("Group #{group_num}")
+	end
+
+	return groups
 end
 
-p make_groups(names_master, 4, 3)
+
+def make_and_print_groups(name_master_list, group_size, min_group_size, shuffle_first = false)
+	make_groups(name_master_list, group_size, min_group_size, shuffle_first).each do |k, v|
+		puts "#{k}: #{v.join(', ')} \n\n"
+	end
+end
+
+make_and_print_groups(names_master, 4, 3, true)
