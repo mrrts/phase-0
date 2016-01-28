@@ -64,7 +64,7 @@
 
 
 
-# 2. Refactored Solution (Same as initial solution, minus commas)
+# 2. Refactored Solution (Same as initial solution, minus comments -- couldn't find new method to apply)
 
 
 
