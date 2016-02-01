@@ -102,5 +102,36 @@ add_item(list,"bannana")
 remove_item(list,"apples")
 update_quantity(list, "cereal", 13)
 print_list(list)
+
+
+#### REFLECTION
+
+# --- What did you learn about pseudocode from working on this challenge?
+
+# These methods weren't too complex, so the pseudocode didn't require very many steps. However, we did run across the question of how to use the wording and when to avoid using language-specific keywords. My understanding is that we shouldn't use method names that are specific to Ruby, but it's okay to use words that are common to programming languages that direct the flow of the logic, like IF, WHILE, iterate, and define. Our guide also pointed out that pseudocode is for us, so we don't need to worry too much about exactly how we word it; rather, the aim is to make sure we understand the logical steps involved and will be able to quickly translate our pseudocode into real code. 
+
+
+# --- What are the tradeoffs of using Arrays and Hashes for this challenge?
+
+# Arrays are easier to keep track of during iteration because you're only dealing with one thing-- the object in the array. It also helps that arrays keep items in order and will therefore be accessible via their separate indices. For this challenge, though, it made much more sense to use a hash because it allowed us to keep track of our information in pairs. We needed to know the name of the grocery item as well as its quantity, so a hash was the sensible choice for a our grocery list. 
+
+
+# --- What does a method return?
+
+# A method returns whatever the return keyword tells it to, and if you only use the return keyword without an expression afterward, it will simply exit the method. Without the return keyword, the method will simply return the value of the last evaluated expression, which will likely be the last line in the method. For this reason, you can leave out the return keyword altogether, but you may use it if you want to break out early (before the last line) in a certain case, or if you want to make it very clear to the reader that the method is returning something. 
+
+
+
+# --- What kind of things can you pass into methods as arguments?
+
+# You can pass any objects (integers, strings, arrays, hashes, custom objects, etc), and that even includes other methods. My pair and I experimented with passing in our create_list method as the first argument since it returned our grocery hash, but our guide pointed out that this was not a DRY solution... we were creating the object in every method call, which isn't the most efficient strategy. So, our guide recommended calling the create_list method once and storing its returned value (the grocery hash) into a variable called list. We then used that variable as our stored grocery hash, and all of our methods performed updates or deletions on that same object. 
+
+
+# --- How can you pass information between methods?
+
+# To pass information from one method to another without using class instance variables, you just need to calculate that information inside of one method, and then in that same method, call the second method, and pass your information (probably stored into a variable) as an argument. 
+
+# --- What concepts were solidified in this challenge, and what concepts are still confusing?
   
+# It was really valuable to dig into some errors we received in our first attempts at refactoring. There were some surprises about what our methods were actually returning, particularly because in refactoring we were changing which line was being evaluated last, which becomes the returned value in Ruby. Our guide also helped us to reach some best practices in terms of readability, encouraging us to choose consistent variable and argument names amongst methods. 
 
