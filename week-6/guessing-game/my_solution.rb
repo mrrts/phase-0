@@ -125,3 +125,35 @@ end
 
 
 # Reflection
+
+# ---- How do instance variables and methods represent the characteristics and behaviors (actions) of a real-world object?
+
+# The methods describe behaviors and abilities that all instances share, but the instance variables represent
+# the information that is specific to the unique representative of the class. The dogs will all have a bark
+# method, but each individual dog will have its own age, gender, breed, and name, for example.
+
+
+# ---- When should you use instance variables? What do they do for you?
+
+# Instance variables should be used any time you make a new representative (instance) of the class. They are 
+# pieces of information specific to that particular instance. They preserve information across the separate
+# class methods, so using the dog example again: if you have a bark method for all dogs, you could have it 
+# output "[Dog's name] says woof!" and the dog's name would be stored in an instance variable.
+
+
+# ---- Explain how to use flow control. Did you have any trouble using it in this challenge? If so, what did you struggle with?
+
+# Flow can be controlled through if/elsif/else/unless branches, through loop statements like until/while/loop, and also
+#   iterators like each. The flow control branched off many different return values, so in the refactoring stage especially,
+#   it was a challenge to keep track of what the last evaluated line would be in the different if/else cases.
+#   I did get a lot of practice using the ternary operator during the refactoring stage, and it was a challenge to figure out
+#   how much that syntax can be used without sacrificing readability -- not sure i have the most readable refactor here.
+
+
+# ---- Why do you think this code requires you to return symbols? What are the benefits of using symbols?
+
+# Symbols are good to use in situations where you are using values that will never be altered in your program. Indeed,
+# they cannot be altered at runtime. 
+# You're generating new objects when you keep using the same string over and over, but with the symbol, it's constantly
+# the same object, with the same object_id. Therefore, if you use the symbol for a value that appears
+# multiple times in your program, it'll always be the exact same object, and this can save performance.
