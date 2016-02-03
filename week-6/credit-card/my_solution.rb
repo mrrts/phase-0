@@ -80,3 +80,25 @@ p card.check_card
 
 
 # Reflection
+
+# --- What was the most difficult part of this challenge for you and your pair?
+
+# We kept trying to use string methods on integers, so it took a bit of head scratching and
+# irb-testing to realize that we needed to convert integers to strings before we used string
+# methods like .split. 
+
+
+# --- What new methods did you find to help you when you refactored?
+
+# We used the flatten! destructive method because the prior step split two-digit numbers into an array of 2
+# single-digit numbers, which meant that there were nested arrays. In order to facilitate finding the sum of
+# all of the array values, it made more sense to flatten the array first. We also used the .inject method
+# to find the sum of the array values because that method performs the same operation on each value while storing
+# in a separate variable the cumulative value so far. We also used the even? method to find our even-numbered 
+# indexes. 
+
+
+# --- What concepts or learnings were you able to solidify in this challenge?
+
+# We learned about using the pretzel+symbol syntax with the map method:  map(&:to_i). We also got practice 
+# with the each_with_index iterator.
