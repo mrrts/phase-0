@@ -31,48 +31,52 @@
 
 # Initial Solution
 
-class GuessingGame
-  def initialize(answer)
-    raise ArgumentError.new("The answer must be an integer") unless answer.is_a? Integer
-    @answer = answer || rand(100)
-    @solved = false
-  end
+# class GuessingGame
+#   def initialize(answer)
+#     raise ArgumentError.new("The answer must be an integer") unless answer.is_a? Integer
+#     @answer = answer || rand(100)
+#     @solved = false
+#   end
 
-  def guess(guess)
-  	raise ArgumentError.new("You must guess an integer") unless guess.is_a? Integer
-  	@solved = false
-  	if guess < @answer
-  		:low
-  	elsif guess > @answer
-  		:high
-  	else
-  		@solved = true
-  		:correct
-  	end
-  end
+#   def guess(guess)
+#   	raise ArgumentError.new("You must guess an integer") unless guess.is_a? Integer
+#   	@solved = false
+#     if guess == @answer
+#       @solved = true
+#       return :correct
+#     guess < @answer? return :low : return :high
+#   	if guess < @answer
+#   		:low
+#   	elsif guess > @answer
+#   		:high
+#   	else
+#   		@solved = true
+#   		:correct
+#   	end
+#   end
 
-  def solved?
-  	@solved
-  end
+#   def solved?
+#   	@solved
+#   end
 
-  def run
-  	puts "Guess a number from 0 to 100"
-  	response = gets.chomp
-  	guess(response.to_i)
-  	until solved?
-  		puts "Sorry, your guess was #{guess(response.to_i)}. Try again."
-  		response = gets.chomp
-  		guess(response.to_i)
-  	end
-  	puts "You win!"
-  	run
-  end
+#   def run
+#   	puts "Guess a number from 0 to 100"
+#   	response = gets.chomp
+#   	guess(response.to_i)
+#   	until solved?
+#   		puts "Sorry, your guess was #{guess(response.to_i)}. Try again."
+#   		response = gets.chomp
+#   		guess(response.to_i)
+#   	end
+#   	puts "You win!"
+#   	run
+#   end
 
-end
+# end
 
-game = GuessingGame.new rand(100)
+# game = GuessingGame.new rand(100)
 
-game.run
+# game.run
 
 
 
@@ -82,7 +86,45 @@ game.run
 # Refactored Solution
 
 
+class GuessingGame
+  def initialize(answer)
+    raise ArgumentError.new("The answer must be an integer") unless answer.is_a? Integer
+    @answer = answer
+  end
 
+  def guess(guess)
+    raise ArgumentError.new("You must guess an integer") unless guess.is_a? Integer
+    if guess == @answer
+      @solved = true
+      return :correct
+    else
+      @solved = false
+      guess < @answer ? (:low) : (:high)
+    end
+  end
+
+  def solved?
+    @solved
+  end
+
+  def run
+    first_try, @solved, response = true, false, nil
+    until solved?
+      puts (first_try ? "Guess a number 0-100" : "Your guess was #{guess(response.to_i)}. Try again.")
+      response = gets.chomp
+      guess(response.to_i)
+      first_try = false
+    end
+    puts "You win! Play again? (y/n)"
+    run if gets.chomp == 'y'
+    return
+  end
+
+end
+
+game = GuessingGame.new rand(100)
+
+game.run
 
 
 
