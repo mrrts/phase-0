@@ -79,6 +79,34 @@ startup_names = ["bit", ["find", "fast", ["optimize", "scope"]]]
 
 p ly_appender(startup_names)
 
+
+## REFLECTION
+
+# ---- What are some general rules you can apply to nested arrays?
+
+# There is no limit to how many levels of complexity you can nest. Also, you can have a mixture of arrays
+# and hashes. To access a deeply nested value, you can use bracket notation several times in succession. 
+
+
+# ---- What are some ways you can iterate over nested arrays?
+
+# You can still use the each method, but if you have arrays withing your array, you will need to have some sort of
+# testing with IF/ELSE/etc to control what to do if your value itself is an array. 
+
+
+# ---- Did you find any good new methods to implement or did you re-use one you were already familiar with? What was it and why 
+# did you decide that was a good option?
+
+# We used a recursive solution for the bonus challenge, which was terrific. That wasn't a totally new method per se, but
+# rather a method design strategy. I appreciate that recursion allows you to handle any unknown nesting depth. 
+# We used the map and map! methods as well, which were useful in operating in the same way.
+
+
+
+
+
+
+# My pair teaching me about recursion:
 =begin
 
 ------------ 1mb
