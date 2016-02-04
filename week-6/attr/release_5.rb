@@ -1,45 +1,23 @@
-# Release 4 (ACTUALLY 5):
+class NameData
+  attr_accessor :name
 
-# refactor this code to move method assignments to attr_ attributes. Like we did with age. Let's pare down the superfluous code.
-
-# Your Code Here:
-
-class Profile
-# first let's finish refactoring this code
-# note that there is a way to add all of the variables like :age on one line, how would we do that?
-  attr_accessor :age
-
-  def initialize
-    @age = 27
-    @name = "Kim"
-    @occupation = "Cartographer"
+  def initialize name
+    @name = name
   end
-
-  def print_info
-    puts
-    puts "age: #{@age}"
-    puts
-    puts "name: #{@name}"
-    puts
-    puts "occupation: #{@occupation}"
-    puts
-  end
-
-  def what_is_name
-    @name
-  end
-
-  def change_my_name=(new_name)
-    @name = new_name
-  end
-
-  def what_is_occupation
-    @occupation
-  end
-
-  def change_my_occupation=(new_occupation)
-    @occupation = new_occupation
-  end
-
-
 end
+
+
+class Greetings
+  def initialize name
+    @person = NameData.new name
+  end
+
+  def hello
+    puts "Hello #{@person.name}! I am a computer."
+  end
+end
+
+
+
+greet = Greetings.new('John Doe')
+greet.hello

@@ -79,3 +79,17 @@ puts
 puts "---- printing all profile info -----"
 sleep 0.8
 instance_of_profile.print_info
+
+
+## REFLECTION
+# --- What changed between the last release and this release? What was replaced?
+
+# The method what_is_age was removed, and the line attr_reader :age was added instead. When the
+# attribute is read in the code below the class definition, it is simply accessed with
+# the dot syntax: instance_of_profile.age
+
+
+# --- Is this code simpler than the last?
+
+# The code takes fewer lines and the keyword method attr_reader explicitly defines the functionality 
+# that the old method otherwise would have provided: a simple return of the instance variable's value.

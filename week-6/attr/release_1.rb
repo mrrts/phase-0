@@ -76,3 +76,15 @@ puts
 puts "---- printing all profile info -----"
 sleep 0.8
 instance_of_profile.print_info  #Let's see the final product now. We changed all of the values using setters, so everything is different than before.
+
+## REFLECTION
+# --- What are these methods doing?
+
+# The methods are simply returning the value of the instance variable or setting it to a new value.
+
+# --- How are they modifying or returning the value of instance variables?
+
+# They return the value by the last line simply being the stated variable name. They modify 
+# by taking an argument for a new value and assigning it to the instance variable using the 
+# assignment operator = . 
+

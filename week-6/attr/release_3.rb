@@ -74,3 +74,15 @@ puts
 puts "---- printing all profile info -----"
 sleep 0.8
 instance_of_profile.print_info
+
+## REFLECTION
+# --- What changed between the last release and this release? What was replaced?
+
+# The change_my_age method was removed and replaced with attr_writer :age . On line 68, there is no needed
+# to call a writing method; You can simply access the attribute of the instance with the dot syntax and assign
+# a new value to it.
+
+# --- Is this code simpler than the last?
+
+# Yes, it reduces the number of lines and doesn't subtract from overall readability. In fact, it improves
+# readability, in my opinion.
