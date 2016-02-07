@@ -152,16 +152,14 @@ end
 
 #DRIVER CODE (I.E. METHOD CALLS) GO BELOW THIS LINE
 
-$new_game = BingoBoard.new
-$new_game.display_board
+new_game = BingoBoard.new
+new_game.display_board
 
 #Auto-play
-until $new_game.solved? 
-  $new_game.check($new_game.call)
+until new_game.solved? 
+  new_game.check(new_game.call)
   sleep 0.3
 end
-
-exit
 
 
 
