@@ -89,7 +89,7 @@ class BingoBoard
   def call
     letter = BINGO_LETTERS.sample
     num, first_try = nil, true
-    while @called_numbers.include?(num) || first_try == true
+    while @called_numbers.include?(num) || first_try
       num = RANGES[BINGO_LETTERS.index(letter)].to_a.sample
       first_try = false
     end
