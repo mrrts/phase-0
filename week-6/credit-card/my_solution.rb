@@ -64,11 +64,9 @@ class CreditCard
   end
   
   def check_card
-    @cc_num.each_with_index do |item, index|   
+    @cc_num.each_index do |index|
         @cc_num[index] *= 2 if index.even?
-    end
-    @cc_num.each_with_index do |item, index|
-        @cc_num[index] = item.to_s.split('').map(&:to_i) if item > 9
+        @cc_num[index] = @cc_num[index].to_s.split('').map(&:to_i) 
     end
     @cc_num.flatten!.inject {|sum, item| sum + item} % 10 == 0
   end
