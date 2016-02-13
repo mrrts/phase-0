@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Memory!</title>
+	<style type="text/css">
+		body {
+			background: #ABB0CE;
+			text-align: center;
+		}
+
+		#card-grid {
+			max-width: 800px;
+			margin: 0 auto;
+		}
+
+		.card {
+			background: #fff;
+			width: 15%;
+			height: 80px;
+			margin: 0 20px 20px 0;
+			display: inline-block;
+			border: 3px solid black;
+			font-size: 40px;
+			font-weight: bold;
+			text-align: center;
+			padding-top: 20px;
+		}
+
+		.card:hover {
+			background: #ccc;
+			cursor: pointer;
+		}
+
+		.card.selected {
+			background: #ccc;
+			border-color: orange;
+		}
+
+		.card span {
+			visibility: hidden;
+		}
+
+		.card.selected span, .card.matched span {
+			visibility: visible;
+		}
+
+		.card.matched span {
+			color: #34CA65;
+		}
+
+		.card.matched {
+			background: green;
+			border-color: #34CA65;
+		}
+
+		.card.matched:hover {
+			cursor: default;
+		}
+	</style>
+</head>
+<body>
+
+	<header>
+		<h1>Memory!</h1>
+	</header>
+
+	<main>
+		<div id="card-grid">
+
+		</div>
+		
+
+	</main>
+
+	<footer>
+		<h3>Moves: <span id="moves">0</span></h3>
+		<h3>Games Won: <span id="games">0</span></h3>
+		<button id="new-cards">New cards</button>
+	</footer>
+
+	<script type="text/javascript" src="game.js"></script>
+
+</body>
+</html>
