@@ -114,3 +114,25 @@ window.onbeforeunload = function () {
 
 game1 = new MemoryGame(20);
 
+
+// --What was the most difficult part of this challenge?
+
+// It was hardest to accomplish this without using jquery, which I have some experience with. It was educational to
+// see how pure javascript works, particularly in DOM manipulation. I also got stuck in my check_board() function, 
+// not sure why it "forgot" about one of the items in the array, but I realized that the selection was made by checking for 
+// classes, and the change of the class in the first item effectively made the second item the new first/only item.
+
+// --What did you learn about creating objects and functions that interact with one another?
+
+// I learned about the ins and outs of using the this keyword and also adding functions as properties on an object.
+
+// --Did you learn about any new built-in methods you could use in your refactored solution? If so, what were they and how do they work?
+
+// I really didn't. There aren't many handy built-in methods like in Ruby, and I had to write my own random-in-range
+// and array-shuffle functions.
+
+// --How can you access and manipulate properties of objects?
+
+// You use either the dot syntax or the [bracket] syntax to access the properties of objects, and then you can
+// assign new values to those properties using the assignment = operator. If the property is a function, you can
+// invoke it by accessing the property and then appending the parentheses(). 
