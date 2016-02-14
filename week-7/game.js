@@ -13,7 +13,7 @@ function random_in_range (min, max) {
 };
 
 
-function shuffle_array (arr) {
+function shuffle_array (arr, times_to_shuffle) {
 	var new_array = Array(arr.length).fill(null);
 	for (var i = 0; i < arr.length; i++) {
 		var random_index = random_in_range(0, new_array.length);
@@ -67,6 +67,7 @@ function check_board () {
 		game1.moves += 1;
 	}
 	if (document.getElementsByClassName('matched').length === game1.num_cards) { // game is won
+		document.getElementsByTagName('body')[0].className += ' winner';
 		game1.games += 1;
 	}
 	update_scoreboard();
@@ -83,8 +84,10 @@ function draw_grid (items) {
 	}
 	var cards = document.getElementsByClassName('card');
 	for (var i = 0; i < cards.length; i++) {
+		// Set the onclick property for each card
 		cards[i].onclick = function () {
 			if (this.classList.contains('matched')) {
+				// Don't do anything on matched cards
 				return;
 			}
 			else if (selected().length !== 2) {
@@ -95,13 +98,15 @@ function draw_grid (items) {
 	}
 };
 
-                      
+                
 document.getElementById('new-cards').onclick = function () {
 	document.getElementById('card-grid').innerHTML = "";
+	document.getElementsByTagName('body')[0].className = "";
 	draw_grid(build_deck(game1.num_cards));
 };
 
 
+// Confirm window reload
 window.onbeforeunload = function () {
      return "Reloading will create erase the scoreboard and make a new game.";
 };
