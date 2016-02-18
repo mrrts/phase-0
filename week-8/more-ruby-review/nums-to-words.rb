@@ -37,8 +37,8 @@ def num_to_words(num, final_pass = true)
 		print 'ten'
 	else # 1 to 9 and 20 to 99
 		print WORDS[tens][1] + 'ty' if tens > 0
-		print '-' 					if tens > 0 && ones > 0
-		print WORDS[ones][0] 		if ones > 0
+		print '-' if tens > 0 && ones > 0
+		print WORDS[ones][0] if ones > 0
 	end
 
 	if final_pass
